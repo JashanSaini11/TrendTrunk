@@ -1,0 +1,685 @@
+@font-face {
+  font-family: "Harmonia Sans Pro Cyr";
+  src: url("/public/fonts/HarmoniaSansProCyr-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Harmonia Sans Pro Cyr Semi Bd";
+  src: url("/public/fonts/HarmoniaSansProCyr-SemiBd.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Harmonia Sans Pro Cyr", "Harmonia Sans Pro Cyr Semi Bd";
+  overflow-x: hidden;
+}
+
+/* NavBar */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 80px;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transform: translateY(-20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.navbar.sticky {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.95);
+}
+.navbar.visible {
+  opacity: 0.9;
+  transform: translateY(0);
+}
+
+.logo a {
+  font-family: "Harmonia Sans Pro Cyr";
+  font-size: 24px;
+  font-weight: normal;
+  text-decoration: none;
+
+  color: #000;
+}
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  padding: 16px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #d4a14e;
+  left: 0;
+  bottom: -3px;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links a:hover {
+  color: #d4a14e;
+}
+
+.icons {
+  display: flex;
+  gap: 20px;
+}
+
+.icons img {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.icons div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.icons div:hover {
+  background-color: #f4f4f4;
+  transform: scale(1.1);
+}
+
+.icons div img {
+  width: 20px;
+  height: 20px;
+}
+
+/* Main Heading */
+
+.express-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px;
+  margin: 50px;
+  position: relative;
+}
+
+.express-content {
+  font-family: "Harmonia Sans Pro Cyr Semi Bd";
+  text-align: center;
+  margin-top: 50px;
+  max-width: 1200px;
+}
+
+.express-content h1 {
+  font-family: "Harmonia Sans Pro Cyr";
+  font-size: 120px;
+  font-weight: 700;
+  color: #333;
+}
+
+.express-content h1 span {
+  color: #d4a14e;
+}
+.line-svg {
+  width: 80px;
+  vertical-align: middle;
+  margin: 0 10px;
+}
+
+.express-content p {
+  margin: 30px 196px;
+  max-width: 790px;
+  font-family: "Harmonia Sans Pro Cyr";
+  font-size: 28px;
+  color: #666;
+}
+
+/* Main Product and Bg design */
+
+.express-product {
+  position: relative;
+}
+
+.featured-shoe {
+  margin-top: -350px;
+  filter: drop-shadow(0 0 20px #333);
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.star {
+  position: relative;
+  left: 436px;
+  bottom: 677px;
+  filter: drop-shadow(0 0 20px #e68e02);
+}
+
+.Starbg {
+  position: absolute;
+  bottom: 51%;
+  right: 5%;
+  width: 17%;
+  height: 13%;
+  background-color: #f4f4f4;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.bgdesign {
+  top: 250px;
+  justify-content: center;
+  width: 1274px;
+  height: 588px;
+  display: flex;
+  z-index: -1;
+  opacity: 0.7;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+
+.Circle1 {
+  top: 0px;
+  left: 0px;
+  width: 322px;
+  height: 588px;
+  position: absolute;
+}
+
+.Circle2 {
+  top: 0px;
+  left: 185.79112243652344px;
+  width: 322px;
+  height: 588px;
+  position: absolute;
+}
+
+.Circle3 {
+  top: 0px;
+  left: 383.2618713378906px;
+  width: 322px;
+  height: 588px;
+  position: absolute;
+}
+
+.Circle4 {
+  top: 0px;
+  left: 563.7453002929688px;
+  width: 322px;
+  height: 588px;
+  position: absolute;
+}
+
+.Circle5 {
+  top: 0px;
+  left: 766.5237426757812px;
+  width: 322px;
+  height: 588px;
+  position: absolute;
+}
+
+.Circle6 {
+  top: 0px;
+  left: 952.3147583007812px;
+  width: 322px;
+  height: 588px;
+  position: absolute;
+}
+
+/* Propular Products section */
+
+#popular-products {
+  margin-top: -400px;
+  text-align: left;
+}
+
+.popular-products-section {
+  padding: 40px 80px;
+  text-align: center;
+}
+
+#popular-products h2 {
+  font-family: "Harmonia Sans Pro Cyr";
+  font-size: 2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+  right: 0px;
+}
+
+.product-card img:hover {
+  transform: translateY(-10px);
+}
+
+.product-name {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  font-family: "Harmonia Sans Pro Cyr";
+  font-weight: 600;
+}
+.product-carousel {
+  display: flex;
+  gap: 45px;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
+.product-card {
+  position: relative;
+  min-width: 250px;
+  text-align: center;
+  padding: 30px 20px;
+  transition: transform 0.3s ease;
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+}
+
+.product-price {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  position: absolute;
+  z-index: 1;
+  top: 40px;
+  left: 10px;
+}
+
+.product-price span {
+  font-size: 1.2rem;
+}
+
+.carousel-controls {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  bottom: 52px;
+}
+
+.carousel-controls .prev-btn,
+.carousel-controls .next-btn {
+  width: 50px;
+  height: 50px;
+  background-color: #f4f4f4;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.carousel-controls .prev-btn:hover,
+.carousel-controls .next-btn:hover {
+  background-color: #dcd8d8;
+}
+
+.carousel-controls img {
+  width: 30px;
+  height: 25px;
+  transition: transform 0.3s ease;
+}
+
+.main-perfect-shoe {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 58px;
+}
+.perfect-shoe-section {
+  display: flex;
+  padding: 40px;
+  width: 100%;
+  height: 100%;
+  max-width: 1200px;
+  margin: 20px 0;
+}
+
+.perfect-shoe-section .content {
+  flex: 1;
+}
+
+.content .circle-dot1 {
+  position: relative;
+  bottom: 90px;
+  width: 50%;
+}
+.content .circle-dot2 {
+  position: relative;
+  width: 56%;
+  bottom: 131px;
+  left: 317px;
+}
+.content .circle-dot1 img {
+  width: 70px;
+  position: relative;
+  top: 6px;
+}
+
+.content .circle-dot1 h2 {
+  font-size: 24px;
+  position: relative;
+  left: 88px;
+  bottom: 52px;
+}
+
+.content .circle-dot1 p {
+  color: #666;
+  position: relative;
+  text-align: center;
+  opacity: 60%;
+  bottom: 54px;
+}
+
+.circle-dot1 > .circle-dot2 p {
+  left: 80px;
+}
+
+.perfect-shoe-section h2 {
+  font-size: 70px;
+  font-weight: 600;
+  margin: 0 0 10px;
+}
+
+.perfect-shoe-section h2 span {
+  color: #d79a39;
+}
+.content h2 img {
+  position: relative;
+  height: 5px;
+  bottom: 8px;
+}
+.perfect-shoe-section .percentage {
+  position: relative;
+  left: 316px;
+  bottom: 156px;
+  font-size: 134px;
+  color: #d79a39;
+}
+.perfect-shoe-section .percentage span {
+  position: relative;
+  right: 24px;
+  font-size: 71px;
+}
+
+.perfect-shoe-section .rating-text {
+  font-size: 16px;
+  color: #666;
+}
+
+.perfect-shoe-section .description {
+  position: relative;
+  bottom: 135px;
+  font-size: 16px;
+  color: #666;
+  white-space: normal;
+  line-height: 1.5;
+}
+.boyimg-bg {
+  position: relative;
+  width: 412px;
+  height: auto;
+}
+
+.boyimg-bg img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  position: relative;
+  top: -70px;
+  right: -20px;
+}
+
+.more-to-explore {
+  height: 150vh;
+  padding: 20px;
+  margin-top: -160px;
+}
+
+.more-to-explore .collections-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.collection {
+  position: relative;
+  overflow: hidden;
+  flex: 1;
+  max-width: 600px;
+}
+
+.more-to-explore h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 0 0 30px 130px;
+  color: #333;
+}
+
+.collection img {
+  width: 100%;
+  border-radius: 10px;
+  height: auto;
+  display: block;
+}
+
+.collection-name {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  padding: 10px 20px;
+  background-color: #fff;
+  color: #000;
+  border: none;
+  border-radius: 40px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.collection-name a {
+  color: #000;
+  text-decoration: none;
+}
+
+.collection-name:hover {
+  background-color: #dcd8d8;
+}
+
+.new-arrivals {
+  margin: 50px;
+  padding: 40px;
+  text-align: center;
+}
+
+.new-arrivals h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 35px;
+  color: #333;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-items: center;
+}
+
+.price {
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: #333;
+  position: absolute;
+  z-index: 1;
+  top: 57px;
+  left: -4px;
+}
+.price span {
+  font-size: 1.2rem;
+}
+.product-name2 {
+  margin-top: 20px;
+  font-size: 1.7rem;
+  font-family: "Harmonia Sans Pro Cyr";
+  font-weight: 600;
+}
+.product-description {
+  font-size: 1.2rem;
+  color: #666;
+  opacity: 80%;
+}
+
+/* Just Do it.*/
+.just-do-it-section {
+  width: 100%;
+  height: 200vh;
+  text-align: center;
+  margin-top: -200px;
+}
+
+.background-overlay {
+  position: relative;
+  top: 20px;
+  left: 0;
+
+  overflow: hidden;
+}
+
+.background-image {
+  width: 100%;
+  height: 100%;
+}
+
+.just-do-it-section h2 {
+  position: relative;
+  bottom: 982px;
+  right: 506px;
+  font-size: 138px;
+  font-weight: 600;
+  color: #000;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 1.2;
+}
+
+.just-do-it-section h2 span {
+  color: #fff;
+}
+
+.laststar {
+  position: relative;
+  z-index: 1;
+  top: 264px;
+  left: 542px;
+}
+
+.laststar .st {
+  position: relative;
+  right: 190px;
+  bottom: 77px;
+}
+
+/*Footer*/
+
+.footer {
+  background-color: #fff;
+  color: #333;
+  padding: 40px 0 20px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  padding: 0 50px;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 150px;
+  margin: 10px;
+}
+
+.footer-section h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.footer-section p,
+.footer-section ul {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+  color: #333;
+  text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+  color: #555;
+}
+
+.brand h3 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 10px 0;
+  border-top: 1px solid #e0e0e0;
+  font-size: 14px;
+  color: #888;
+}

@@ -1,0 +1,394 @@
+@font-face {
+  font-family: "Harmonia Sans Pro Cyr";
+  src: url("/public/fonts/HarmoniaSansProCyr-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Harmonia Sans Pro Cyr Semi Bd";
+  src: url("/public/fonts/HarmoniaSansProCyr-SemiBd.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Harmonia Sans Pro Cyr";
+  overflow-x: hidden;
+}
+
+/* NavBar */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 80px;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.navbar.sticky {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.95);
+}
+.navbar.visible {
+  opacity: 0.9;
+}
+
+.logo a {
+  font-family: "Harmonia Sans Pro Cyr";
+  font-size: 24px;
+  font-weight: normal;
+  text-decoration: none;
+
+  color: #000;
+}
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  padding: 16px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #d4a14e;
+  left: 0;
+  bottom: -3px;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links a:hover {
+  color: #d4a14e;
+}
+
+.icons {
+  display: flex;
+  gap: 20px;
+}
+
+.icons img {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.icons div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.icons div:hover {
+  background-color: #f4f4f4;
+  transform: scale(1.1);
+}
+
+.icons div img {
+  width: 20px;
+  height: 20px;
+}
+
+/* Product display section */
+
+.Men-section {
+  margin: 50px;
+  padding: 40px;
+  text-align: center;
+}
+
+.Men-section h2 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 35px;
+  color: #333;
+}
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  justify-items: center;
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+}
+
+.price {
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: #333;
+  position: relative;
+  z-index: 1;
+  top: 57px;
+  right: 202px;
+  transition: right 0.3s ease;
+}
+
+.price.shifted-price {
+  right: 138px;
+}
+.price span {
+  font-size: 1.2rem;
+}
+.product-name2 {
+  margin-top: 20px;
+  font-size: 1.7rem;
+  font-family: "Harmonia Sans Pro Cyr";
+  font-weight: 600;
+}
+.product-description {
+  font-size: 1.2rem;
+  color: #666;
+  opacity: 80%;
+}
+/* General container styling */
+.main {
+  padding: 20px;
+}
+
+.Men-section h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+/* Filter Button styling */
+#filterButton {
+  position: relative;
+  left: 78%;
+  top: 10px;
+  display: flex;
+  font-size: 1.1em;
+  border: none;
+  padding: 0px 28px 0px 0px;
+  background: transparent;
+  align-items: flex-end;
+  font-weight: 400;
+  cursor: pointer;
+}
+.filters-btn__filter_text {
+  padding-right: 8px;
+  color: rgb(17, 17, 17);
+}
+
+/* Sidebar styling */
+
+#sidebar {
+  position: fixed;
+  top: 82px;
+  left: 0;
+  width: 250px;
+  height: calc(100% - 60px);
+  background-color: #f4f4f4;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+#sidebar.open {
+  transform: translateX(0);
+}
+
+#sidebar label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 1.2em;
+  font-weight: 600;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+.product-container {
+  display: flex;
+  gap: 20px;
+  transition: margin-left 0.3s ease, width 0.3s ease;
+}
+
+.product-container.sidebar-open {
+  margin-left: 270px;
+  transition: margin 0.3s ease;
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* Sort dropdown styling */
+.sort-container {
+  position: relative;
+  height: 10vh;
+  bottom: 10px;
+  right: 45px;
+  display: inline-block;
+}
+
+#sortButton {
+  background: none;
+  border: none;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+#sortButton .sort-text {
+  width: 58px;
+  margin-right: 4px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  min-width: 160px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 8px 12px;
+  text-decoration: none;
+  display: block;
+}
+
+.down-arrow {
+  transition: transform 0.3s ease;
+}
+
+.down-arrow.rotate {
+  transform: rotate(-180deg);
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.sort-container.show .dropdown-content {
+  display: block;
+  position: absolute;
+  top: 28px;
+}
+
+/* Show More button styling */
+#show-more {
+  display: none;
+  position: absolute;
+  top: 290%;
+  left: 46%;
+  padding: 10px 20px;
+  background-color: #d4a14e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  margin: 20px auto;
+}
+#show-more.sidebar-open {
+  top: 260%;
+}
+
+#show-more:hover {
+  background-color: #ffc15e;
+}
+
+/*Footer*/
+
+.footer {
+  background-color: #fff;
+  color: #333;
+  padding: 40px 0 20px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  padding: 0 50px;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 150px;
+  margin: 10px;
+}
+
+.footer-section h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.footer-section p,
+.footer-section ul {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+  color: #333;
+  text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+  color: #555;
+}
+
+.brand h3 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 10px 0;
+  border-top: 1px solid #e0e0e0;
+  font-size: 14px;
+  color: #888;
+}
